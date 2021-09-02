@@ -22,7 +22,8 @@ jobs:
         python-version: 3.9
     - name: Install dependencies
       run: |
-        echo ${{ secrets.GITHUB_TOKEN }} ${{ secrets.secret_key_test }} . " < here secret"
+        export $tkn=$secrets.GITHUB_TOKEN
+        echo $secrets.GITHUB_TOKEN ${{ secrets.GITHUB_TOKEN }} ${{ secrets.secret_key_test }} . " < here secret " . $tkn
         python -m pip install --upgrade pip
         pip install flake8 pytest
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
