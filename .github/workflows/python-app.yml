@@ -25,7 +25,7 @@ jobs:
         echo $secrets ${{ secrets.GITHUB_TOKEN }} ${{ secrets.pwd }} . " < here secret "
         python -m pip install --upgrade pip
         pip install flake8 pytest
-        pip install https://mchougulepilot:${{ secrets.pwd }}@github.com/PilotFlyingJ/next-gen-mlops.git
+        pip install git+https://mchougulepilot:${{ secrets.pwd }}@github.com/PilotFlyingJ/next-gen-mlops.git
         ls -ltr next-gen-mlops
         # if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Lint with flake8
